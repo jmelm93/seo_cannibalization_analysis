@@ -1,6 +1,7 @@
 import pandas as pd
 from helpers import *
 
+EXPORT_NAME = "example"
 FILE_LOCATION = "data/dataset.csv"
 BRAND_VARIANTS = ["variant1", "variant2", "variant3"]
 
@@ -29,13 +30,13 @@ def job(file_location, brand_variants):
     
     dict_of_dfs = {
         "instructions": instructions_df, 
-        "cannibalization_opps": final_df, 
-        "immediate_opps": immediate_opps_df,
+        "all_potential_opps": final_df, 
+        "high_likelihood_opps": immediate_opps_df,
         "risk_qa_data": qa_df 
     }
     
     print('-- Start: Creating excel file')
-    create_excel_file(dict_of_dfs)
+    create_excel_file(dict_of_dfs, EXPORT_NAME)
     print('-- End: Creating excel file')
     
     return "Job complete!"

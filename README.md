@@ -39,9 +39,9 @@ Before running this script, please ensure you have the following:
 
 The script will create an Excel file with multiple tabs for different analysis stages:
 
-- `cannibalization_opps`: Contains the final analysis output.
-- `immediate_opps`: Lists queries with 2+ pages marked as 'Potential Opportunity.'
-- `risk_qa_data`: Includes query-level data for pages in 'cannibalization_opps.'
+- `all_potential_opps`: Contains the final analysis output.
+- `high_likelihood_opps`: Lists queries with 2+ pages marked as 'Potential Opportunity.'
+- `risk_qa_data`: Includes query-level data for pages in 'all_potential_opps.'
 
 ## Interpretation
 
