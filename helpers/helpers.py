@@ -6,6 +6,7 @@ def remove_brand_queries(df, brand_variants):
     Remove queries that contain brand variants.
     """
     df = df[~df['query'].str.contains('|'.join(brand_variants))]
+    print("'|'.join(brand_variants)", '|'.join(brand_variants))
     return df
 
 

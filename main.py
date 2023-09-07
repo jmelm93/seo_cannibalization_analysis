@@ -2,8 +2,8 @@ import pandas as pd
 from helpers import *
 
 EXPORT_NAME = "example"
-FILE_LOCATION = "data/dataset.csv"
-BRAND_VARIANTS = ["variant1", "variant2", "variant3"]
+FILE_LOCATION = "data/dataset_jd.csv"
+BRAND_VARIANTS = ['variant1', 'variant2']
 
 def job(file_location, brand_variants):
     """
@@ -11,7 +11,10 @@ def job(file_location, brand_variants):
     """
     print('-- Start: Creating primary analysis df')
     initial_df = pd.read_csv(file_location)
-    non_brand_df = remove_brand_queries(initial_df, brand_variants)
+    non_brand_df = initial_df
+    not_empty_spaces = all([brand_variant != '' for brand_variant in brand_variants])
+    if brand_variants and not_empty_spaces:
+        non_brand_df = remove_brand_queries(initial_df, brand_variants)
     query_page_counts = calculate_query_page_metrics(non_brand_df)
     query_counts = filter_queries_by_clicks_and_pages(query_page_counts)
     wip_df = merge_and_aggregate(query_page_counts, query_counts)

@@ -2,6 +2,7 @@ data/
 venv/
 output/
 keyword_map_generator/
+blog/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

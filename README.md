@@ -17,9 +17,10 @@ Before running this script, please ensure you have the following:
 - `impressions`: The number of impressions for the page-query combination.
 - `position`: The average position of the page-query combination.
 
+
 **Note:** You can use this tool to extract this data from the API (https://www.seoworkflows.com/tools/extraction/google-search-console-api). I'd recommend getting the past 3 to 6mo of data.
 
-3. **Update 'CONFIG'**: You must update the "FILE_LOCATION" and "BRAND_VARIANTS" at the top of the `main.py` file
+1. **Update 'CONFIG'**: You must update the "FILE_LOCATION" and "BRAND_VARIANTS" at the top of the `main.py` file
 
 ## Running main.py
 
