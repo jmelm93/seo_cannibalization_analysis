@@ -2,7 +2,7 @@ import pandas as pd
 from helpers import *
 
 EXPORT_NAME = "example"
-FILE_LOCATION = "data/dataset_jd.csv"
+FILE_LOCATION = "data/dataset.csv"
 BRAND_VARIANTS = ['variant1', 'variant2']
 
 def job(file_location, brand_variants):

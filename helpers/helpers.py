@@ -61,17 +61,18 @@ def calculate_click_percentage(df):
 def filter_by_click_percentage(df):
     """
     Identify and filter by queries that meet specific conditions.
+    Only keep queries that have at least 2 pages with 10% or more clicks
     """
-    queries_to_keep = df[df['clicks_pct_vs_query'] >= 0.2].groupby('query').filter(lambda x: len(x) >= 2)['query'].unique()
+    queries_to_keep = df[df['clicks_pct_vs_query'] >= 0.1].groupby('query').filter(lambda x: len(x) >= 2)['query'].unique()
     df = df[df['query'].isin(queries_to_keep)]
     return df
 
 
-def merge_with_page_clicks(wip_df, iniital_df):
+def merge_with_page_clicks(wip_df, initial_df):
     """
     Merge with page-level click metrics and calculate percentage metrics.
     """
-    page_clicks = iniital_df.groupby('page').agg({'clicks': 'sum'}).reset_index()
+    page_clicks = initial_df.groupby('page').agg({'clicks': 'sum'}).reset_index()
     wip_df = wip_df.merge(page_clicks, on='page', how='inner')
     
     wip_df['clicks_pct_vs_page'] = wip_df['clicks_x'] / wip_df['clicks_y']
