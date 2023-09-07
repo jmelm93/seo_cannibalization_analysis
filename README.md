@@ -21,7 +21,7 @@ Before running this script, please ensure you have the following:
 
 3. **Update 'CONFIG'**: You must update the "FILE_LOCATION" and "BRAND_VARIANTS" at the top of the `main.py` file
 
-## Running the Script
+## Running main.py
 
 1. Clone or download this repository to your local machine.
 
@@ -34,6 +34,14 @@ Before running this script, please ensure you have the following:
 - `python main.py`
 
 5. The script will generate an Excel file (`output.xlsx`) with analysis results.
+
+## Running build_redirect_map.py
+
+**Important:** Only use this process if you have a large amount of rows within the `high_likelihood_opps` tab of the output dataset from the `main.py` script. Doing this at scale runs risks, it's tailored for large websites with much similar content, where cannibalization risks are high.
+
+1. Create a new file called `data.csv` in the root directory containing all the data from the `high_likelihood_opps` tab of the output dataset
+2. Run the script to create an automated `url_from` + `url_to` redirect map, which can be used to write 301 redirects at scale.
+
 
 ## Output
 

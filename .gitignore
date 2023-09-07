@@ -1,7 +1,7 @@
 data/
 venv/
 output/
-
+keyword_map_generator/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
